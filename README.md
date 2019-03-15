@@ -8,6 +8,15 @@ Golang 项目代码自动生成工具
 * Errors
 * Arugments
 
+
+## Install
+```
+go get -u -f -d github.com/domego/gopt/...
+cd $GOPATH/src/github.com/domego/gopt
+make install
+```
+
+## gopt Commands
 ```
 Usage: gopt <command> [options]
 
@@ -30,4 +39,99 @@ Options:
 	-orm	database config file, default: db.yaml
 	-api	gin controller config file, default: api.yaml
 
+```
+
+
+## Example
+
+- gen_gin_server
+```
+gopt gen_gin_server -name demo -port 8080
+```
+
+- gen_orm
+```
+gopt gen_orm -orm db.yaml
+```
+
+- gen_gin_api
+```
+gopt gen_gin_api -api api.yaml
+```
+
+- gen_js_api
+```
+gopt gen_js_api
+```
+
+- gen_api_doc
+```
+gopt gen_api_doc
+```
+
+- gen_types
+```
+gopt gen_types -types types.yaml
+```
+
+- gen_errors
+```
+gopt gen_errors -errors errors.yaml
+```
+
+## Project Structure
+```
+.
+├── Makefile
+├── NAME
+├── README.md
+├── api
+│   ├── gen_types.go
+│   └── user
+│       ├── controller.go
+│       ├── gen_controller.go
+│       └── gen_route.go
+├── api.yaml
+├── app.go
+├── bin
+│   ├── daemonize-darwin
+│   └── daemonize-linux
+├── cfg
+│   └── config.go
+├── config
+│   ├── config.yaml
+│   └── error_msg.yaml
+├── controller
+│   └── role
+│       ├── controller.go
+│       ├── gen_controller.go
+│       └── gen_route.go
+├── db.yaml
+├── doc
+│   └── api_doc.md
+├── errors
+│   └── gen_errors.go
+├── errors.yaml
+├── fresh.conf
+├── gen_types.go
+├── main.go
+├── model
+│   ├── all
+│   │   └── all.go
+│   └── demo
+│       ├── gen_db.go
+│       └── gen_user.go
+├── router.go
+├── service.sh
+├── types.yaml
+└── webapp
+    └── src
+        └── api.js
+
+14 directories, 31 files
+```
+
+## Run
+```
+make fresh
 ```
