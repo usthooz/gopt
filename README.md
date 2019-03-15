@@ -1,5 +1,4 @@
 # gopt
-[![Build Status](https://travis-ci.org/domego/gopt.svg?branch=master)](https://travis-ci.org/domego/gopt)
 [![Go Report Card](https://goreportcard.com/badge/github.com/domego/gopt)](https://goreportcard.com/report/github.com/domego/gopt)
 [![GoDoc](http://godoc.org/github.com/domego/gopt?status.svg)](http://godoc.org/github.com/domego/gopt)
 
